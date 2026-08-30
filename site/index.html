@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facebook products finding</title>
+<style>
+:root { --bg:#f6f1e8; --ink:#1a1714; --card:#fff; --muted:#6b645c; --line:#e4d9c8; --tag:#2c6e49; --warn:#8a3b12; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font: 16px/1.45 "Source Serif 4", Georgia, serif; }
+header { max-width:1080px; margin:0 auto; padding:40px 20px 8px; }
+h1 { margin:0 0 8px; font-size:28px; }
+.sub { color:var(--muted); font-family: system-ui, sans-serif; font-size:14px; }
+.filters { max-width:1080px; margin:0 auto; padding:12px 20px; display:flex; flex-direction:column; gap:10px; font-family:system-ui,sans-serif; font-size:13px; }
+.row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.row span { color:var(--muted); min-width:90px; }
+button { border:1px solid var(--line); background:#fff; border-radius:999px; padding:6px 12px; cursor:pointer; color:var(--ink); }
+button[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+main { max-width:1080px; margin:0 auto; padding:8px 20px 64px; display:grid; gap:16px; }
+article { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+article h2 { margin:0 0 6px; font-size:20px; }
+.chips { display:flex; gap:6px; flex-wrap:wrap; margin:8px 0; }
+.chips b { font-family:system-ui,sans-serif; font-size:11px; font-weight:600; padding:3px 8px; border-radius:999px; background:#efe6d6; }
+.claimed { color:var(--muted); margin:0 0 10px; }
+.providers { display:grid; gap:8px; }
+@media(min-width:720px){ .providers { grid-template-columns: repeat(3,1fr); } }
+.providers a { display:block; text-decoration:none; color:inherit; border:1px solid var(--line); border-radius:12px; padding:10px; }
+.providers a strong { display:block; font-size:13px; font-family:system-ui,sans-serif; }
+.price { font-size:18px; margin:4px 0; }
+.rating { font-family:system-ui,sans-serif; font-size:12px; color:var(--muted); }
+.verdict { margin-top:10px; font-size:14px; }
+.empty { color:var(--muted); padding:32px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Facebook products finding</h1>
+  <p class="sub">Amazon.fr, boutique FR légitime, boutique mondiale · filtres catégorie et « dédié à »</p>
+</header>
+<div class="filters">
+  <div class="row" id="cats"><span>Catégorie</span></div>
+  <div class="row" id="for"><span>Dédié à</span></div>
+</div>
+<main id="grid"></main>
+<script>
+let data = { items: [], dedicated_for: [], categories: [] };
+let cat = "all", person = "all";
+async function load() {
+  data = await (await fetch("catalog.json")).json();
+  renderFilters();
+  render();
+}
+function pill(parent, id, label, current, setter) {
+  const b = document.createElement("button");
+  b.textContent = label;
+  b.setAttribute("aria-pressed", id === current ? "true" : "false");
+  b.onclick = () => { setter(id); renderFilters(); render(); };
+  parent.appendChild(b);
+}
+function renderFilters() {
+  const cats = document.getElementById("cats");
+  const fors = document.getElementById("for");
+  cats.innerHTML = "<span>Catégorie</span>";
+  fors.innerHTML = "<span>Dédié à</span>";
+  pill(cats, "all", "Toutes", cat, v => cat = v);
+  (data.categories || []).forEach(c => pill(cats, c, c, cat, v => cat = v));
+  pill(fors, "all", "Tous", person, v => person = v);
+  (data.dedicated_for || []).forEach(p => pill(fors, p, p, person, v => person = v));
+  pill(fors, "untagged", "sans nom", person, v => person = v);
+}
+function render() {
+  const grid = document.getElementById("grid");
+  const items = (data.items || []).filter(i => {
+    if (cat !== "all" && i.category !== cat) return false;
+    if (person === "untagged" && i.dedicated_for) return false;
+    if (person !== "all" && person !== "untagged" && i.dedicated_for !== person) return false;
+    return true;
+  });
+  if (!items.length) {
+    grid.innerHTML = '<p class="empty">Aucun produit pour ce filtre.</p>';
+    return;
+  }
+  grid.innerHTML = "";
+  items.forEach(i => {
+    const el = document.createElement("article");
+    const who = i.dedicated_for || "sans nom";
+    const prov = (i.providers || []).map(p =>
+      `<a href="${p.url}" target="_blank" rel="noopener"><strong>${p.name}</strong><div class="price">${p.price || ""}</div><div class="rating">${p.rating || ""}</div><div class="rating">${p.reviews || ""}</div></a>`
+    ).join("");
+    el.innerHTML = `<h2>${i.title}</h2>
+      <div class="chips"><b>${i.category || ""}</b><b>${who}</b></div>
+      <p class="claimed">${i.claimed || ""}</p>
+      <div class="providers">${prov}</div>
+      <p class="verdict">${i.review_verdict || ""} · ${i.best_price || ""}</p>`;
+    grid.appendChild(el);
+  });
+}
+load();
+</script>
+</body>
+</html>

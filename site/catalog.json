@@ -1,0 +1,58 @@
+{
+  "updated": "2026-08-29",
+  "dedicated_for": [
+    "safa",
+    "eya",
+    "yecine",
+    "adam"
+  ],
+  "categories": [
+    "salle de bain",
+    "cuisine",
+    "nettoyage",
+    "électronique",
+    "mode",
+    "enfants",
+    "autre"
+  ],
+  "items": [
+    {
+      "id": "hair-catcher-2026-08-29",
+      "date": "2026-08-29",
+      "title": "Autocollants jetables attrape-cheveux douche",
+      "category": "salle de bain",
+      "dedicated_for": null,
+      "claimed": "Coller sur la bonde ; retient les cheveux ; jeter et remplacer quand plein",
+      "facebook": "https://www.facebook.com/share/r/18ENbDHcwT/",
+      "review_verdict": "Mitigé sur les génériques FR (adhésif) ; le type de produit marche quand ça tient.",
+      "best_price": "5,11 € / 50 ou 7,99 € / 100 sur Amazon.fr",
+      "notes": "Pub lead-gen « commente Astuce ». Pas de marque. Éviter Aire Allure FR à 26 €.",
+      "providers": [
+        {
+          "slot": "amazon",
+          "name": "Amazon.fr — JoyEcho 100 pcs",
+          "url": "https://www.amazon.fr/dp/B0FWKPV7F4",
+          "price": "7,99 €",
+          "rating": "3,6/5 (16)",
+          "reviews": "« Parfait et efficace » vs salle de bain inondée / se décolle à la 1re douche"
+        },
+        {
+          "slot": "france",
+          "name": "Amazon.fr — Umbra Starfish (réutilisable)",
+          "url": "https://www.amazon.fr/dp/B00B8RZXV0",
+          "price": "4,58 €",
+          "rating": "3,9/5 (12 869)",
+          "reviews": "Marque légitime ; autre produit (silicone), pas le sticker jetable"
+        },
+        {
+          "slot": "world",
+          "name": "Amazon.com — Aire Allure 25 pcs",
+          "url": "https://www.amazon.com/Aire-Allure-Disposable-Catcher-Stickers/dp/B08R283HC3",
+          "price": "$11,99",
+          "rating": "4,4/5 (13k)",
+          "reviews": "Catch hair then peel ; cher à importer"
+        }
+      ]
+    }
+  ]
+}
