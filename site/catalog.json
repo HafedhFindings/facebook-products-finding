@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29",
+  "updated": "2026-09-01",
   "dedicated_for": [
     "safa",
     "eya",
@@ -51,6 +51,120 @@
           "price": "$11,99",
           "rating": "4,4/5 (13k)",
           "reviews": "Catch hair then peel ; cher à importer"
+        }
+      ]
+    },
+    {
+      "id": "gmktec-evo-x2-2026-09-01",
+      "date": "2026-09-01",
+      "title": "GMKtec EVO-X2 AI Mini PC",
+      "category": "électronique",
+      "dedicated_for": null,
+      "claimed": "Ryzen AI Max+ 395, Radeon 8060S, jusqu’à 128 Go unifié pour LLM locaux et gaming",
+      "facebook": "https://www.facebook.com/share/1Ea3hdAdPB/",
+      "review_verdict": "Surtout oui pour la perf IA ; setup, chaleur et bruit de ventilateur en caveats.",
+      "best_price": "3 359,99 € GMKtec EU (3 309,99 € si GMKEVO50OFF)",
+      "notes": "RAM soudée. Amazon.fr 3 799,96 € ; LDLC 4 299,95 €.",
+      "providers": [
+        {
+          "slot": "amazon",
+          "name": "Amazon.fr — EVO-X2 128 Go / 2 To",
+          "url": "https://www.amazon.fr/dp/B0F6X332N6",
+          "price": "3 799,96 €",
+          "rating": "4,2/5 (38)",
+          "reviews": "Perf IA OK ; setup, chaleur, bruit"
+        },
+        {
+          "slot": "france",
+          "name": "LDLC — EVO-X2",
+          "url": "https://www.ldlc.com/fiche/PB00707689.html",
+          "price": "4 299,95 €",
+          "rating": "",
+          "reviews": "Revendeur FR légitime, plus cher"
+        },
+        {
+          "slot": "world",
+          "name": "GMKtec EU officiel",
+          "url": "https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1",
+          "price": "3 359,99 €",
+          "rating": "",
+          "reviews": "Meilleur prix exact ; coupon GMKEVO50OFF possible"
+        }
+      ]
+    },
+    {
+      "id": "magseal-bag-sealer-2026-09-01",
+      "date": "2026-09-01",
+      "title": "MagSeal mini scelleuse de sacs",
+      "category": "cuisine",
+      "dedicated_for": null,
+      "claimed": "Scelle les sacs ouverts pour garder les aliments « frais pendant des semaines »",
+      "facebook": "https://www.facebook.com/share/r/19ZCKXZcvL/",
+      "review_verdict": "Mitigé : utile sur snacks, pas un vacuum ; « semaines » non étayé.",
+      "best_price": "13,99 € Amazon.fr",
+      "notes": "Générique sans marque vérifiable. Version 6 niveaux Walmart 18,99 $.",
+      "providers": [
+        {
+          "slot": "amazon",
+          "name": "Amazon.fr — scelleuse USB-C 2-en-1",
+          "url": "https://www.amazon.fr/Scelleur-Scelleuse-manuelle-portable-plastiques/dp/B0C6GWFYGJ",
+          "price": "13,99 €",
+          "rating": "3,4/5 (164)",
+          "reviews": "Marche sur sacs snacks ; fuites, batterie, aimant faibles"
+        },
+        {
+          "slot": "france",
+          "name": "Rue du Commerce marketplace",
+          "url": "https://www.rueducommerce.fr/p/m24070771948.html",
+          "price": "33,28 €",
+          "rating": "0 avis",
+          "reviews": "Plus cher, pas d’avis"
+        },
+        {
+          "slot": "world",
+          "name": "Walmart — 6-level magnetic sealer",
+          "url": "https://www.walmart.com/ip/USB-C-Rechargeable-Mini-Bag-Sealer-One-Touch-Adjustable-Portable-Freshness-6-Level-Adjustable-Heat-Sealer-Cutter-LED-Display-Magnetic-Base-Fridge-Kit/19924351600",
+          "price": "$18,99",
+          "rating": "",
+          "reviews": "Version exacte 6 niveaux ; livraison FR incertaine"
+        }
+      ]
+    },
+    {
+      "id": "my-dream-keeper-2026-09-01",
+      "date": "2026-09-01",
+      "title": "My Dream Keeper peluche tapotante",
+      "category": "enfants",
+      "dedicated_for": null,
+      "claimed": "Tapote / vibre pour calmer le bébé et allonger les siestes",
+      "facebook": "https://www.facebook.com/share/r/1JotA8mwX7/",
+      "review_verdict": "Pas de preuve indépendante pour le produit exact. Pas d’oreiller/peluche dans le lit d’un nourrisson.",
+      "best_price": "19,90 € Chicco chez Made In Bébé (alternative)",
+      "notes": "Shopify viral. Alternative FR : Chicco First Dreams, vibre seulement, usage supervisé.",
+      "providers": [
+        {
+          "slot": "amazon",
+          "name": "Amazon.fr — Chicco First Dreams chaton",
+          "url": "https://www.amazon.fr/Chicco-CHICCO/dp/B0CWRWZY93",
+          "price": "~24,99 €",
+          "rating": "4,7/5 (8 127)",
+          "reviews": "Vibre / musique, ne tapote pas ; marque légitime"
+        },
+        {
+          "slot": "france",
+          "name": "Made In Bébé — Chicco chaton",
+          "url": "https://www.madeinbebe.com/boutique/fr/peluche-chaton-chicco-393259/a393259",
+          "price": "19,90 €",
+          "rating": "",
+          "reviews": "Meilleur prix FR pour l’alternative"
+        },
+        {
+          "slot": "world",
+          "name": "yourdreamkeeper.com — Dream Keeper",
+          "url": "https://yourdreamkeeper.com/products/dreamkeeper",
+          "price": "$54,95",
+          "rating": "",
+          "reviews": "Vendeur officiel ; stats hébergées par le vendeur"
         }
       ]
     }
